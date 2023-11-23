@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class CaixaEletronico
 {
 	public static void main(String[] args) {
-		int notas200=100;int notas50=100;int notas10=100;int notas2=100;
-		int notas100=100;int notas20=100;int notas5=100;int saldo=1000,i=0,j=0;
+		Metodosaque s1 = new Metodosaque();
+		s1.setNota2(100);s1.setNota5(100);s1.setNota10(100);s1.setNota20(100);
+		s1.setNota50(100);s1.setNota100(100);s1.setNota200(100);
+		int saldo=1000,i=0,j=0;
 		int usuario = 1234, senha = 123456;
 		Scanner sc = new Scanner(System.in);
 		while(j<3){
@@ -20,6 +22,7 @@ public class CaixaEletronico
 		    if(senhaUsuario!=senha){
 		        System.out.println("Senha invalida");
 		        System.out.println("Após 3 tentativas erradas o usuario sera bloqueado !!!");
+		        
 		}else{
 		    while(i<5){
 		        System.out.println("          Digite o numero da opção desejada          ");
@@ -31,8 +34,11 @@ public class CaixaEletronico
 		            if(valorSaque>saldo){
 		                System.out.println("Saldo insuficiente!!!");
 		                i++;
-		            }else{
+		            }else if(valorSaque==3 || valorSaque==1 || valorSaque==0) {
+		    			System.out.println("O caixa só trabalha com notas de: R$2-R$5-R$10-R$20-R$50-R$100 E R$200 \nDigite um valor valido!!!");
+		    		}else{
 		                saldo=saldo-valorSaque;
+		                s1.sacar(valorSaque);
 		                System.out.println("Saque efetuado");
 		                i++;
 		            }
