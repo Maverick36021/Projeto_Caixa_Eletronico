@@ -1,9 +1,17 @@
 package pjCaixaEletronico;
 public class Metodosaque
 {
-	private int nota200,nota100,nota50,nota20,nota10,nota5,nota2;// declarar a quantidade de notas armazenadas. ex: nota200=100;
-	
+	private int nota200,nota100,nota50,nota20,nota10,nota5,nota2;// declarar a quantidade de notas armazenadas com o metodo set. ex: nota200=100;
+	private int qntNotas2=0;
 	public void sacar(int x){// x recebe o valor do saque
+		while(x%5>=1) {
+			x=x-2;
+			qntNotas2++;
+		}
+		if(qntNotas2>0) {
+			System.out.println(qntNotas2+" Nota(s) de R$2,00");
+			qntNotas2=0;
+		}
 		
 	    if((x==200 || x==202 || x>=205) && (x/200<=this.nota200 && x%200!=1)){
 	        int qntNotas200=x/200;
@@ -44,13 +52,6 @@ public class Metodosaque
 	        x=x-qntNotas5*5;
 	        this.nota5=this.nota5-qntNotas5;
 	        System.out.println(qntNotas5+" Nota(s) de R$ 5,00");
-	    }
-	    
-	    if((x==2 || x==4 || x>=6) && x/2<=this.nota2){
-	        int qntNotas2 = x/2;
-	        x=x-qntNotas2*2;
-	        this.nota2=this.nota2-qntNotas2;
-	        System.out.println(qntNotas2+" Nota(s) de R$ 2,00");
 	    }
 	    
 	}
