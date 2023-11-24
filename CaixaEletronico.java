@@ -38,8 +38,9 @@ public class CaixaEletronico
 		    			System.out.println("O caixa só trabalha com notas de: R$2-R$5-R$10-R$20-R$50-R$100 E R$200 \nDigite um valor valido!!!");
 		    		}else{
 		                saldo=saldo-valorSaque;
+		                System.out.println("Retire as notas: \n");
 		                s1.sacar(valorSaque);
-		                System.out.println("Saque efetuado");
+		                System.out.println("\nSaque de R$ "+valorSaque+",00 efetuado \n");
 		                i++;
 		            }
 		        }else if(opcao==2){
