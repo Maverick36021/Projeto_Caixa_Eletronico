@@ -58,7 +58,9 @@ public class CaixaEletronico
 		            System.out.println("Opção invalida !!!");
 		            i++;
 		        }
-		    }i++;
+		    }
+		    	System.out.println("Sua seção espirou faça login novamente se quiser acessar o sistema!!!");
+		    i=0;
 		    
 		}
 		    }
